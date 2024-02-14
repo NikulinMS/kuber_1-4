@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: deployment-service
+  namespace: dz4
+spec:
+  ports:
+    - name: http-app
+      port:  9001
+      protocol: TCP
+      targetPort: 80
+    - name: http-app-mult
+      port:  9002
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: main
